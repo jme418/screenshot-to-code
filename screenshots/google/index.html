@@ -1,83 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicia sesión: Cuentas de Google</title>
-    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Google_%22G%22_logo.svg/1024px-Google_%22G%22_logo.svg.png" type="image/png">
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
-    body {
-        font-family: "Roboto", sans-serif;
-        background-color: #f1f1f1;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-    }
-    .container {
-        background-color: #fff;
-        padding: 30px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 320px;
-        text-align: center;
-    }
-    h2 {
-        font-weight: normal;
-        margin-bottom: 5px;
-    }
-    input[type="email"],
-    input[type="password"],
-    input[type="submit"] {
-        width: 100%;
-        padding: 12px;
-        margin: 8px 0;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-    }
-    input[type="submit"] {
-        background-color: #4285f4;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-weight: bold;
-    }
-    input[type="submit"]:hover {
-        background-color: #357ae8;
-    }
-    .forgot-password {
-        text-align: left;
-        font-size: 14px;
-        color: #4285f4;
-        text-decoration: none;
-        margin-top: 5px;
-        display: block;
-        font-weight: bold;
-    }
-    .checkbox-container {
-        text-align: left;
-        margin-top: 10px;
-    }
+        body {
+        font-family: 'Roboto', sans-serif;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
-    <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="Google Logo" width="74">
-    <h2>Inicia sesión</h2>
-    <p>Utiliza tu cuenta de Google</p>
-    <form action="#" method="POST" id="loginForm">
-        <input type="email" id="Email" name="email" placeholder="Correo electrónico" required><br>
-        <input type="password" id="Passwd" name="password" placeholder="Introduce tu contraseña" required><br>
-        <div class="checkbox-container">
-            <input type="checkbox" id="showPassword"> Mostrar contraseña
+<body class="bg-gray-100 flex justify-center items-center">
+    <div class="bg-white w-96 rounded-3xl shadow p-8">
+        <div class="mb-6">
+            <img src="logo.svg" alt="Google logo with red, green, blue and yellow colors" class="h-12">
         </div>
-        <a href="#" class="forgot-password">¿Has olvidado tu contraseña?</a><br>
-        <input type="submit" value="Siguiente">
-        <a href="#" class="forgot-password">¿Has olvidado tu correo electrónico?</a><br>
-    </form>
+
+        <h1 class="text-3xl text-gray-900 mb-4">Inicia sesión</h1>
+
+        <p class="text-gray-900 mb-6">Utiliza tu cuenta de Google</p>
+
+        <input type="text" id="Email" placeholder="Correo electrónico o teléfono" class="w-full border border-gray-600 rounded-md text-gray-900 placeholder-gray-600 py-3 px-4 mb-2 focus:outline-blue-700">
+        <a href="#" class="rounded-md text-sm text-blue-700 font-medium px-1 hover:bg-blue-50">¿Has olvidado tu correo electrónico?</a>
+
+        <input type="password" id="Passwd" placeholder="Introduce tu contraseña" class="w-full border border-gray-600 rounded-md text-gray-900 placeholder-gray-600 py-3 px-4 mt-4 mb-2 focus:outline-blue-700">
+        <div class="flex items-center mb-4">
+            <input type="checkbox" id="showPassword" onclick="togglePassword()">
+            <label class="text-sm text-gray-900 font-medium ml-4" for="showPassword">Mostrar contraseña</label>
+        </div>
+        <a href="#" class="rounded-md text-sm text-blue-700 font-medium px-1 hover:bg-blue-50">¿Has olvidado tu contraseña?</a>
+
+        <p class="text-sm text-gray-600 mt-6">¿No es tu ordenador? Usa el modo Invitado para iniciar sesión de forma privada.</p>
+        <a href="#" class="rounded-md text-sm text-blue-700 font-medium hover:bg-blue-50">Más información sobre cómo usar el modo Invitado</a>
+
+        <div class="flex justify-between my-6">
+            <button class="bg-white rounded-full text-sm text-blue-700 font-medium py-2 px-6 hover:bg-blue-50">Crear cuenta</button>
+            <button class="bg-blue-700 rounded-full text-sm text-white font-medium py-2 px-6">Siguiente</button>
+        </div>
+
+        <select class="w-44 rounded-md text-xs text-gray-600 px-1 py-1 mb-6 hover:bg-gray-200">
+            <option>Español (España)</option>
+        </select>
+
+        <div>
+            <a href="#" class="rounded-md text-xs text-gray-600 px-2 py-1 hover:bg-gray-200">Ayuda</a>
+            <a href="#" class="rounded-md text-xs text-gray-600 px-2 py-1 mx-6 hover:bg-gray-200">Privacidad</a>
+            <a href="#" class="rounded-md text-xs text-gray-600 px-2 py-1 hover:bg-gray-200">Términos</a>
+        </div>
     </div>
+
+    <script>
+        function togglePassword() {
+        const password = document.getElementById("Passwd");
+        const checkbox = document.getElementById("showPassword");
+        if (checkbox.checked) {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+        }
+    </script>
 </body>
 </html>
