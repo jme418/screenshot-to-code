@@ -161,6 +161,17 @@
             background-color: rgb(240, 241, 241);
         }
     </style>
+    <script>
+        function togglePassword() {
+        const password = document.getElementById("Passwd");
+        const checkbox = document.getElementById("showPassword");
+        if (checkbox.checked) {
+            password.type = "text";
+        } else {
+            password.type = "password";
+        }
+        }
+    </script>
 </head>
 <body>
     <div class="rectangle">
@@ -200,17 +211,5 @@
             <a href="#">Términos</a>
         </div>
     </div>
-
-    <script>
-        function togglePassword() {
-        const password = document.getElementById("Passwd");
-        const checkbox = document.getElementById("showPassword");
-        if (checkbox.checked) {
-            password.type = "text";
-        } else {
-            password.type = "password";
-        }
-        }
-    </script>
 </body>
 </html>
