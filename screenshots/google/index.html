@@ -3,54 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicia sesión: Cuentas de Google</title>
-    <link rel="icon" href="https://jkingbeef.eu/media/external-resources/google/favicon.png" type="image/png">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: "Roboto", sans-serif;
         }
+
+        .bg {
+            background-color: rgb(240, 244, 249);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .rectangle {
+            background-color: white;
+            width: 480px;
+            border-radius: 28px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+
+        @media (max-height: 698px) {
+            .bg {
+                height: 698px;
+            }
+
+            .rectangle {
+                border-radius: 0;
+            }
+        }
+
+        @media (max-width: 404px) {
+            .bg {
+                width: 452px;
+            }
+
+            .rectangle {
+                border-radius: 0;
+            }
+        }
+
+        h1 {
+            color: rgb(31, 31, 31);
+            font-weight: 400;
+            margin: 24px 0 0 0;
+        }
+
+        .sub-h1 {
+            color: rgb(31, 31, 31);
+            margin-bottom: 40px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 93.33%;
+            border-style: none;
+            border: 1px solid rgb(116, 119, 117);
+            border-radius: 4px;
+            color: rgb(31, 31, 31);
+            font-size: 16px;
+            padding: 18px 15px;
+            margin-bottom: 9px;
+        }
+
+        input[type="text"]::placeholder, input[type="password"]::placeholder {
+            color: rgb(68, 71, 70);
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline-color: rgb(11, 87, 208);
+        }
+
+        input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .link {
+            border-radius: 8px;
+            color: rgb(11, 87, 208);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 2px 6px;
+        }
+
+        .link:hover {
+            background-color: rgb(236, 242, 252);
+        }
+
+        label {
+            color: rgb(31, 31, 31);
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 16px;
+        }
+
+        .text {
+            color: rgb(68, 71, 70);
+            font-size: 14px;
+            padding: 6px;
+            margin: 24px 0 0 0;
+        }
+
+        .button-inverted {
+            background-color: white;
+            border: none;
+            border-radius: 9999px;
+            color: rgb(11, 87, 208);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 12px 26px;
+            cursor: pointer;
+        }
+
+        .button-inverted:hover {
+            background-color: rgb(245, 248, 253);
+        }
+
+        .button {
+            background-color: rgb(11, 87, 208);
+            border: none;
+            border-radius: 9999px;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 12px 26px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: rgb(14, 78, 181);
+        }
+
+        select {
+            width: 200px;
+            border: none;
+            border-radius: 8px;
+            color: rgb(31, 31, 31);
+            font-size: 12px;
+            padding: 4px;
+            margin-bottom: 24px;
+            cursor: pointer;
+        }
+
+        select:hover {
+            background-color: rgb(240, 241, 241);
+        }
+        
+        a {
+            border-radius: 8px;
+            text-decoration: none;
+            color: rgb(31, 31, 31);
+            font-size: 12px;
+            padding: 4px 8px;
+        }
+
+        a:hover {
+            background-color: rgb(240, 241, 241);
+        }
     </style>
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen">
-    <div class="bg-white w-96 rounded-3xl shadow p-8 my-6">
-        <div class="mb-6">
-            <img src="https://jkingbeef.eu/media/external-resources/google/logo.svg" alt="Google logo with red, green, blue and yellow colors" class="h-12">
+<body class="bg">
+    <div class="rectangle">
+        <div>
+            <img src="https://jkingbeef.eu/media/external-resources/google/logo.svg" alt="Google logo with red, green, blue and yellow colors" style="height: 48px;">
         </div>
 
-        <h1 class="text-3xl text-gray-900 mb-4">Inicia sesión</h1>
+        <h1>Inicia sesión</h1>
 
-        <p class="text-gray-900 mb-6">Utiliza tu cuenta de Google</p>
+        <p class="sub-h1">Utiliza tu cuenta de Google</p>
 
-        <input type="text" id="Email" placeholder="Correo electrónico o teléfono" class="w-full border border-gray-600 rounded-md text-gray-900 placeholder-gray-600 py-3 px-4 mb-2 focus:outline-blue-700">
-        <a href="#" class="rounded-md text-sm text-blue-700 font-medium px-1 hover:bg-blue-50">¿Has olvidado tu correo electrónico?</a>
+        <input type="text" id="Email" placeholder="Correo electrónico o teléfono" autocomplete="email">
+        <a href="#" class="link">¿Has olvidado tu correo electrónico?</a>
 
-        <input type="password" id="Passwd" placeholder="Introduce tu contraseña" class="w-full border border-gray-600 rounded-md text-gray-900 placeholder-gray-600 py-3 px-4 mt-4 mb-2 focus:outline-blue-700">
-        <div class="flex items-center mb-4">
+        <input type="password" id="Passwd" placeholder="Introduce tu contraseña" style="margin-top: 16px;">
+        <div style="display: flex; align-items: center; padding: 2px 6px; margin-bottom: 16px;">
             <input type="checkbox" id="showPassword" onclick="togglePassword()">
-            <label class="text-sm text-gray-900 font-medium ml-4" for="showPassword">Mostrar contraseña</label>
+            <label for="showPassword">Mostrar contraseña</label>
         </div>
-        <a href="#" class="rounded-md text-sm text-blue-700 font-medium px-1 hover:bg-blue-50">¿Has olvidado tu contraseña?</a>
+        <a href="#" class="link">¿Has olvidado tu contraseña?</a>
 
-        <p class="text-sm text-gray-600 mt-6">¿No es tu ordenador? Usa el modo Invitado para iniciar sesión de forma privada.</p>
-        <a href="#" class="rounded-md text-sm text-blue-700 font-medium hover:bg-blue-50">Más información sobre cómo usar el modo Invitado</a>
+        <p class="text">¿No es tu ordenador? Usa el modo Invitado para iniciar sesión de forma privada.</p>
+        <a href="#" class="link">Más información sobre cómo usar el modo Invitado</a>
 
-        <div class="flex justify-between my-6">
-            <button class="bg-white rounded-full text-sm text-blue-700 font-medium py-2 px-6 hover:bg-blue-50">Crear cuenta</button>
-            <button class="bg-blue-700 rounded-full text-sm text-white font-medium py-2 px-6" onclick="clickedSubmitButton()">Siguiente</button>
+        <div style="display: flex; justify-content: space-between; margin: 24px 24px;">
+            <button class="button-inverted">Crear cuenta</button>
+            <button class="button" onclick="clickedSubmitButton()">Siguiente</button>
         </div>
 
-        <select class="w-44 rounded-md text-xs text-gray-600 px-1 py-1 mb-6 hover:bg-gray-200">
+        <select id="langSelector">
             <option>Español (España)</option>
         </select>
 
         <div>
-            <a href="#" class="rounded-md text-xs text-gray-600 px-2 py-1 hover:bg-gray-200">Ayuda</a>
-            <a href="#" class="rounded-md text-xs text-gray-600 px-2 py-1 mx-6 hover:bg-gray-200">Privacidad</a>
-            <a href="#" class="rounded-md text-xs text-gray-600 px-2 py-1 hover:bg-gray-200">Términos</a>
+            <a href="#">Ayuda</a>
+            <a href="#" style="margin: 24px">Privacidad</a>
+            <a href="#">Términos</a>
         </div>
     </div>
 
