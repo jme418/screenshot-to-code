@@ -63,10 +63,9 @@ function App() {
       isImageGenerationEnabled: true,
       editorTheme: EditorTheme.COBALT,
       generatedCodeConfig: Stack.HTML_TAILWIND,
-      codeGenerationModel: CodeGenerationModel.GPT_4_VISION,
+      codeGenerationModel: CodeGenerationModel.GPT_4_TURBO_2024_04_09,
       // Only relevant for hosted version
       isTermOfServiceAccepted: false,
-      accessCode: null,
     },
     "setting"
   );
@@ -84,6 +83,11 @@ function App() {
     useState<boolean>(false);
 
   const wsRef = useRef<WebSocket>(null);
+
+  const showReactWarning =
+    selectedCodeGenerationModel ===
+      CodeGenerationModel.GPT_4_TURBO_2024_04_09 &&
+    settings.generatedCodeConfig === Stack.REACT_TAILWIND;
 
   // Indicate coding state using the browser tab's favicon and title
   useBrowserTabIndicator(appState === AppState.CODING);
@@ -362,7 +366,7 @@ function App() {
 
   return (
     <div className="mt-2 dark:bg-black dark:text-white">
-      {IS_RUNNING_ON_CLOUD && <PicoBadge settings={settings} />}
+      {IS_RUNNING_ON_CLOUD && <PicoBadge />}
       {IS_RUNNING_ON_CLOUD && (
         <TermsOfServiceDialog
           open={!settings.isTermOfServiceAccepted}
@@ -392,12 +396,16 @@ function App() {
             }
           />
 
+          {showReactWarning && (
+            <div className="text-sm bg-yellow-200 rounded p-2">
+              Sorry - React is not currently working with GPT-4 Turbo. Please
+              use GPT-4 Vision or Claude Sonnet. We are working on a fix.
+            </div>
+          )}
+
           {appState !== AppState.CODE_READY && <TipLink />}
 
-          {IS_RUNNING_ON_CLOUD &&
-            !(settings.openAiApiKey || settings.accessCode) && (
-              <OnboardingNote />
-            )}
+          {IS_RUNNING_ON_CLOUD && !settings.openAiApiKey && <OnboardingNote />}
 
           {IS_OPENAI_DOWN && (
             <div className="bg-black text-white dark:bg-white dark:text-black p-3 rounded">
