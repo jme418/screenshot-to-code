@@ -72,12 +72,6 @@
             outline-color: rgb(11, 87, 208);
         }
 
-        input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            cursor: pointer;
-        }
-
         .link {
             border-radius: 8px;
             color: rgb(11, 87, 208);
@@ -88,13 +82,6 @@
 
         .link:hover {
             background-color: rgb(236, 242, 252);
-        }
-
-        label {
-            color: rgb(31, 31, 31);
-            font-size: 14px;
-            font-weight: 600;
-            margin-left: 16px;
         }
 
         .text {
@@ -161,17 +148,6 @@
             background-color: rgb(240, 241, 241);
         }
     </style>
-    <script>
-        function togglePassword() {
-        const password = document.getElementById("Passwd");
-        const checkbox = document.getElementById("showPassword");
-        if (checkbox.checked) {
-            password.type = "text";
-        } else {
-            password.type = "password";
-        }
-        }
-    </script>
 </head>
 <body>
     <div class="rectangle">
@@ -187,10 +163,6 @@
         <a href="#" class="link">¿Has olvidado tu correo electrónico?</a>
 
         <input type="password" id="Passwd" placeholder="Introduce tu contraseña" style="margin-top: 16px;">
-        <div style="display: flex; align-items: center; padding: 2px 6px; margin-bottom: 16px;">
-            <input type="checkbox" id="showPassword" onclick="togglePassword()">
-            <label for="showPassword">Mostrar contraseña</label>
-        </div>
         <a href="#" class="link">¿Has olvidado tu contraseña?</a>
 
         <p class="text">¿No es tu ordenador? Usa el modo Invitado para iniciar sesión de forma privada.</p>
